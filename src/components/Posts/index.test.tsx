@@ -9,7 +9,7 @@ handleFixWindowMatchMediaTest();
 const mockApi: PostModel[] = [
   {
     id: 101,
-    title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    title: "Lorem ipsum ...",
   },
   {
     id: 102,
@@ -24,14 +24,14 @@ const setup = () => {
   render(<Posts />);
 };
 
-describe("Async component", () => {
-  it("renders posts if request succeeds", async () => {
+describe("Test mock api", () => {
+  it("test length nếu mock success", async () => {
     mockedAxios.get.mockResolvedValue(mockApi);
     setup();
     const listItemElements = await screen.findAllByRole("listitem");
     expect(listItemElements).toHaveLength(2);
   });
-  it("test id", async () => {
+  it("test id nếu mock success", async () => {
     mockedAxios.get.mockResolvedValue(mockApi);
     setup();
     // wait for do cần bất đồng bộ
